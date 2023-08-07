@@ -1,0 +1,65 @@
+spring:
+  output:
+    ansi:
+      enabled: always
+  cloud:
+    azure:
+      cosmos:
+        endpoint: https://developer-shdglob-sbx1-glob-cosmos.documents.azure.com:443/
+        key: 2dkXDedZFl6AkEOtf0eiMYZf9fHmvA9tXLZ8lr7ACcY6lh5tJlI48fzFvhkdOQSHKKXaBJIn1QHgCe5aZuoQ1w==
+        populateQueryMetrics: true
+        database: tutorial
+      active-directory:
+        credential:
+          client-id: 0af0e633-b02b-4aa5-94b6-c481149167d1
+          client-secret: 7TbGr5V~XV-p19b.trU._G-v1t0F29OkGy
+        profile:
+          tenant-id: dbbfc1e7-994f-49c6-bdb2-a1092a0da494
+        authorization-clients:
+          bdDefault:
+            scopes:
+              - https://brightdropdev1.onmicrosoft.com/0af0e633-b02b-4aa5-94b6-c481149167d1/.default
+            authorization-grant-type: client_credentials
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,env,heapdump,caches
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      statsd:
+        enabled: false
+server:
+  servlet:
+    context-path: /api
+
+azure:
+  application-insights:
+    instrumentation-key: ~
+
+bd:
+  swagger.operations.basePath: ${server.servlet.context-path}
+  services.baseUrl: https://api-dev1.gobrightdrop-ppe.com
+  servicetoserviceappids: REPLACE_ME
+  oauth2:
+    resourceserver:
+      issuers:
+        - https://login.microsoftonline.com/dbbfc1e7-994f-49c6-bdb2-a1092a0da494/v2.0/
+        - https://login.microsoftonline.com/8cebdf5e-f854-4465-a561-760f76e92f88/v2.0/
+        - https://brightdropdev1.b2clogin.com/brightdropdev1.onmicrosoft.com/b2c_1a_signin/v2.0/
+
+permission-v2-api:
+  baseurl: ${bd.services.baseUrl}/api/permissions
+
+organization-api:
+  baseurl: http://localhost:8081/api/organizations
+
+logging:
+  level:
+    com.azure: OFF
+    com.gobrightdrop.saas: DEBUG
+    com.azure.cosmos.implementation.SqlQuerySpecLogger: DEBUG
