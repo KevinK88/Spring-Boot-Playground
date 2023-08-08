@@ -2,9 +2,10 @@ package com.example.crudanddata.crudandata.entity;
 
 import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
 
-@Container(containerName = "tutorial")
+
+@Container(containerName = "employee")
 public class Employee {
     @Id
     @PartitionKey
