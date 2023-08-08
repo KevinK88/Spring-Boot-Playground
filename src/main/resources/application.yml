@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    azure:
+      cosmos:
+        endpoint: https://developer-shdglob-sbx1-glob-cosmos.documents.azure.com:443/
+        key: REPLACE_ME
+        populateQueryMetrics: true
+        database: tutorial
+
+logging:
+  level:
+    com.azure: OFF
+    com.gobrightdrop.saas: DEBUG
+    com.azure.cosmos.implementation.SqlQuerySpecLogger: DEBUG

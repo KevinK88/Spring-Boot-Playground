@@ -16,15 +16,16 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.mysql:mysql-connector-j'
+	//runtimeOnly 'com.mysql:mysql-connector-j'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'org.springframework.boot:spring-boot-starter-webflux:3.1.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'com.azure.spring:spring-cloud-azure-dependencies:6.0.0-beta.4'
 	implementation 'com.azure.spring:spring-cloud-azure-starter-data-cosmos'
-	implementation 'org.hibernate:hibernate-validator:6.1.0.Final'
+	//implementation 'org.hibernate:hibernate-validator:6.1.0.Final'
 
 }
 ext {

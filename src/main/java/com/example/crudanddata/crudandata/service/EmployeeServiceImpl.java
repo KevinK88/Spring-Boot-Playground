@@ -2,11 +2,9 @@ package com.example.crudanddata.crudandata.service;
 
 import com.example.crudanddata.crudandata.dao.EmployeeDAO;
 import com.example.crudanddata.crudandata.entity.Employee;
-import jakarta.transaction.Transactional;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
 
@@ -26,13 +24,11 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    @Transactional
     public Employee save(Employee theEmployee) {
         return employeeDAO.save(theEmployee);
     }
 
     @Override
-    @Transactional
     public void deleteById(int theId) {
         employeeDAO.deleteById(theId);
     }
